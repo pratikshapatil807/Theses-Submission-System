@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"> Online Thesis Submission System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+       <li><a href="home.html">Home</a></li>
+        <li class="active"><a href="add_thesis.html">Add Thesis</a></li>
+          <li><a href="StudentExternalWithId.html">Add External</a></li>
+       <li><a href="login.html">Log Out</a></li>
+       
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-1 ">
+    <!--   <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p> -->
+    </div>
+    <div class="col-sm-10 text-left"> 
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Add Thesis</title>
+</head>
+<body>
+ <h1> Thesis Adding Form</h1>
+  <form method="post" action="uploadServlet" enctype="multipart/form-data">
+    <div class="form-group">
+            
+   
+      <input type="hidden" class="form-control" id="email" placeholder="Enter email" name="email" required>
+    </div>
+            <div class="form-group">
+            
+      <label for="college"> College:</label>
+      <input type="text" class="form-control" id="college" placeholder="Enter college" name="college" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="internallecturer">Internal lecturer:</label>
+      <input type="text" class="form-control" id="internallecturer" placeholder="internallecturer" name="internallecturer" required>
+    </div>
+    
+     <div class="form-group">
+      <label for="student_name">student name:</label>
+      <input type="text" class="form-control" id="student_name" placeholder="student_name" name="student_name" required>
+    </div>
+  
+   <div class="form-group">
+      <label for="study_year">study year:</label>
+      <input type="text" class="form-control" id="study_year" placeholder="study_year" name="study_year" required>
+    </div>
+  
+   <div class="form-group">
+      <label for="usn_no">usn no:</label>
+      <input type="text" class="form-control" id="usn_no" placeholder="usn_no" name="usn_no" required>
+    </div>
+    
+     <div class="form-group">
+      <label for="department">Department:</label>
+      <input type="text" class="form-control" id="department" placeholder="department" name="department" required >
+    </div>
+   
+   <div class="form-group">
+      <label for="course">Course:</label>
+      <input type="text" class="form-control" id="course" placeholder="course" name="course" required >
+    </div>
+    
+    <div class="form-group">
+      <label for="course_period">Course_period:</label>
+      <input type="text" class="form-control" id="course_period" placeholder="course_period" name="course_period" required >
+    </div>
+    
+     <div class="form-group">
+      <label for="contact_no">Contact_no:</label>
+      <input type="text" class="form-control" id="contact_no" placeholder="contact_no" name="contact_no" required >
+    </div>
+    
+     <div class="form-group">
+      <label for="postal_address">Postal_address:</label>
+      <input type="text" class="form-control" id="postal_address" placeholder="postal_address" name="postal_address" required >
+    </div>
+    
+    <div class="form-group">
+      <label for="thesistitle">Thesis title:</label>
+      <input type="text" class="form-control" id="thesistitle" placeholder="thesistitle" name="thesistitle" required >
+    </div>
+    
+   <div class="form-group">
+    <label for="upload">Upload Thesis:</label>
+    <input type="file" class="form-control" id="thesis" placeholder="Enter upload " name="thesis">
+  </div>
+  
+  
+ 
+    
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+    </div>
+    <div class="col-sm-1 ">
+     <!--  <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div> -->
+    </div>
+  </div>
+</div>
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"> Online Thesis Submission System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+       <li><a href="home.html">Home</a></li>
+        <li class="active"><a href="add_thesis.html">Add Thesis</a></li>
+          <li><a href="StudentExternalWithId.html">Add External</a></li>
+       <li><a href="login.html">Log Out</a></li>
+       
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-1 ">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-10 text-left"> 
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Add Thesis</title>
+</head>
+<body>
+ <h1> Thesis Adding Form</h1>
+  <form method="post" action="uploadServlet" enctype="multipart/form-data">
+            <div class="form-group">
+      <label for="college"> College:</label>
+      <input type="college" class="form-control" id="college" placeholder="Enter college" name="college" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="internallecturer">Internal lecturer:</label>
+      <input type="text" class="form-control" id="internallecturer" placeholder="internallecturer" name="internallecturer" required>
+    </div>
+    
+     <div class="form-group">
+      <label for="student_name">student name:</label>
+      <input type="text" class="form-control" id="student_name" placeholder="student_name" name="student_name" required>
+    </div>
+  
+   <div class="form-group">
+      <label for="study_year">study year:</label>
+      <input type="text" class="form-control" id="study_year" placeholder="study_year" name="study_year" required>
+    </div>
+  
+   <div class="form-group">
+      <label for="usn_no">usn no:</label>
+      <input type="text" class="form-control" id="usn_no" placeholder="usn_no" name="usn_no" required>
+    </div>
+    
+     <div class="form-group">
+      <label for="department">Department:</label>
+      <input type="text" class="form-control" id="department" placeholder="department" name="department" required >
+    </div>
+   
+   <div class="form-group">
+      <label for="course">Course:</label>
+      <input type="text" class="form-control" id="course" placeholder="course" name="course" required >
+    </div>
+    
+    <div class="form-group">
+      <label for="course_period">Course_period:</label>
+      <input type="text" class="form-control" id="course_period" placeholder="course_period" name="course_period" required >
+    </div>
+    
+     <div class="form-group">
+      <label for="contact_no">Contact_no:</label>
+      <input type="text" class="form-control" id="contact_no" placeholder="contact_no" name="contact_no" required >
+    </div>
+    
+     <div class="form-group">
+      <label for="postal_address">Postal_address:</label>
+      <input type="text" class="form-control" id="postal_address" placeholder="postal_address" name="postal_address" required >
+    </div>
+    
+    <div class="form-group">
+      <label for="thesistitle">Thesis title:</label>
+      <input type="text" class="form-control" id="thesistitle" placeholder="thesistitle" name="thesistitle" required >
+    </div>
+    
+   <div class="form-group">
+    <label for="upload">Upload Thesis:</label>
+    <input type="file" class="form-control" id="upload" placeholder="Enter upload " name="thesis">
+  </div>
+  
+  
+ 
+    
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+    </div>
+    <div class="col-sm-1 ">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+</body>
+</html>
+ -->
